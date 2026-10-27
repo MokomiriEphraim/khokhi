@@ -1,0 +1,28 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+.venv/
+
+# Build output
+frontend/dist/
+target/
+gridcraft/target/
+gridcraft/dist/
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+
+# System generated
+.system_generated/
+.gemini/

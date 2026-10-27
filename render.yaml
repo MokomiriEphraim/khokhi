@@ -1,0 +1,24 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy this repo as a single unified Web Service (SPA Frontend + Node API)
+
+services:
+  - type: web
+    name: khokhi
+    runtime: node
+    plan: free              # or starter / standard for production
+    buildCommand: bash build.sh
+    startCommand: node server/server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false          # set in Render dashboard: Environment
+      - key: MONGO_URI
+        sync: false          # set in Render dashboard: Environment
+      - key: MONGO_DB
+        value: AutonoumousDB
+      - key: JWT_SECRET
+        sync: false          # set in Render dashboard: Environment
+      - key: RESEND_API_KEY
+        sync: false          # set in Render dashboard: Environment
